@@ -17,5 +17,5 @@ pdf: $(pdfs)
 midi: $(midis)
 
 %.midi: %.ly
-	- lilypond --formats=midi --output=$@ $<
+	- lilypond --output=`echo $@ | sed 's|\.midi||'` $<
 
