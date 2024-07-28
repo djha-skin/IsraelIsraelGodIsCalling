@@ -6,7 +6,7 @@ midis = $(patsubst %.ly,output/%.midi,$(wildcard *.ly))
 all: pdf midi
 
 clean:
-	rm -f output
+	rm -rf output
 
 pdf: $(pdfs)
 
