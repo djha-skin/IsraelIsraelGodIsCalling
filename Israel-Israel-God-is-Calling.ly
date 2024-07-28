@@ -2,13 +2,13 @@
 
 firstVerse = \lyricmode {
     Is -- rael, Is -- rael God is cal -- ling,
-    Calling thee from lands of woe.
-    Babylon the great is falling;
-    God shall all her tow'rs o'er-throw.
-    Come to Zion, come to Zion,
-    Ere his floods of anger flow.
-    Come to Zion, come to Zion,
-    Ere his floods of anger flow.
+    Cal -- ling thee from lands of woe.
+    Ba -- byl -- on the great is fal -- ling;
+    God shall all her tow'rs o'er -- throw.
+    Come to Zi -- on, come to Zi -- on,
+    Ere his floods of an -- ger flow.
+    Come to Zi -- on, come to Zi -- on,
+    Ere his floods of an -- ger fl -- ow.
 }
 
 \book {

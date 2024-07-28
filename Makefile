@@ -12,10 +12,13 @@ pdf: $(pdfs)
 
 
 output/%.pdf: %.ly
-	lilypond --pdf -dno-enable-midi lib/definitions.ly $<
+	- mkdir -p output
+	- lilypond --pdf -dno-enable-midi --output output/ lib/definitions.ly $<
+	- mv output/output.pdf $@
 
 midi: $(midis)
 
 output/%.midi: %.ly
-	lilypond --pdf -denable-midi lib/definitions.ly $<
-
+	- mkdir -p output
+	- lilypond --pdf -denable-midi --output output/ lib/definitions.ly $<
+	- mv output/output.midi $@
