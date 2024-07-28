@@ -1,21 +1,21 @@
 .PHONY: all clean
 
-pdfs = $(patsubst %.ly,%.pdf,$(wildcard *.ly))
-midis = $(patsubst %.ly,%.midi,$(wildcard *.ly))
+pdfs = $(patsubst %.ly,output/%.pdf,$(wildcard *.ly))
+midis = $(patsubst %.ly,output/%.midi,$(wildcard *.ly))
 
 all: pdf midi
 
 clean:
-	rm -f *.midi *.pdf
+	rm -f output
 
 pdf: $(pdfs)
 
 
-%.pdf: %.ly
-	- sed -e '/\\enablemidi/d' $< |  lilypond --formats=pdf --output=`echo $@ | sed 's|.pdf||'` -
+output/%.pdf: %.ly
+	lilypond --pdf -dno-enable-midi lib/definitions.ly $<
 
 midi: $(midis)
 
-%.midi: %.ly
-	- lilypond --output=`echo $@ | sed 's|\.midi||'` $<
+output/%.midi: %.ly
+	lilypond --pdf -denable-midi lib/definitions.ly $<
 

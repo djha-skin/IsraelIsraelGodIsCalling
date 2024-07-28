@@ -1,6 +1,15 @@
 \version "2.25.16"
 
-enablemidi = \midi {}
+firstVerse = \lyricmode {
+    Is -- rael, Is -- rael God is cal -- ling,
+    Calling thee from lands of woe.
+    Babylon the great is falling;
+    God shall all her tow'rs o'er-throw.
+    Come to Zion, come to Zion,
+    Ere his floods of anger flow.
+    Come to Zion, come to Zion,
+    Ere his floods of anger flow.
+}
 
 \book {
     \header {
@@ -17,8 +26,13 @@ enablemidi = \midi {}
                 \key f \major
                 \time 4/4
                 \relative {
-                    c4. c8 d,4 c8 a8 f8 f2 d2 c4. f8 a8 f8 c'8 a8 g2. r4
+                    c4. c8 d4 c8 a8 f8 f2 d2 c4. f8 a8 f8 c'8 a8 g2. r4
                 }
+
+
+            }
+            \new Lyrics \lyricsto "tenor" {
+                \firstVerse
             }
             \new Voice = "countertenor" {
 
@@ -29,6 +43,7 @@ enablemidi = \midi {}
 
             \new PianoStaff <<
                \new Staff = "treble" {
+                    
 
                }
                \new Staff = "bass" {
@@ -36,6 +51,11 @@ enablemidi = \midi {}
                }
             >>
         >>
-        \enablemidi
+        #(if (ly:get-option 'enable-midi)
+            #{
+                \midi {
+                }
+            #}
+        )
     }
 }
