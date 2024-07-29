@@ -11,7 +11,7 @@ firstVerse = \lyricmode {
     Come to Zi -- on, come to Zi -- on,
     Ere his floods of an -- ger flow.
     Come to Zi -- on, come to Zi -- on,
-    Ere his floods of an -- ger fl -- ow.
+    Ere his floods of an -- ger flow.
 }
 
 secondVerse = \lyricmode {
@@ -49,7 +49,7 @@ fourthVerse = \lyricmode {
 }
 
 \book {
-    \header {
+    \header { 
         title = "Israel, Israel, God is Calling"
         composer = "Charles C. Converse"
         poet = "Richard Smyth"
@@ -60,36 +60,83 @@ fourthVerse = \lyricmode {
         <<
             \new ChordNames {
                 \chordmode {
-                f1. | f1. | f1.:sus4 | f1.:sus4
-                f1. | f1. | f1.:sus4 | f1.:sus4
-                f1. | f1. | f1.:sus4 | f1.:sus4
+                    \set noChordSymbol = ##f
+                    f1. | r1. | f1.:sus4 | r1.
+                    f1. | r1. | f1.:sus4 | r1.
+                    f1. | r1. | f1.:sus4 | r1.
+                    f1. | bes2./f f2. | bes1./f | r1.
+                    f1. | f1.:sus4 |  c1. | r1.
+                    f1. | bes2./f f2. | bes1./f | r1.
+                    f1. | f1.:sus4 | f1. | r1.
+                    c1. | r1. | f1. | r1.
+                    bes1. | r1. | c1. | c1.:7
+                    f1. | bes2./f f2. | bes1./f | f1.
                 }
             }
             \new Voice = "tenor" {
-                \set Staff.instrumentName = "Solo"
-                \set Staff.midiInstrument = "voice oohs"
+                \set Staff.instrumentName = "Tenor"
+                \set Staff.midiInstrument = "violin"
                 \clef "G_15"
                 \key f \major
-                \tempo 4 = 120
+                \tempo 4 = 140
                 \time 6/4
                 \relative {
-                    r1. | r1. | r1. | r1.
+                    r1. | r1. | r1. | r1. \break
                     r1. | r1. | r1. | r1.
                     c2. c2. | r1. | c2. c2. | r1.
-                    c2. c2. | d2 c4 c2 a4 | f1. | d1.
+                    c2. c2. | d2 c4 a2 f4 | f1. | d1.
                     c2. f2. | a2 f4 c'2 a4 | g1.~ | g2. r2.
-                    c2. c2. | d2 c4 c2 a4 | f1. | d1.
+                    c2. c2. | d2 c4 a2 f4 | f1. | d1.
                     c2. f2. | a2 g4 f2 e4 | f1.~\< | f2.\! r2.
-                    g2.~ g2 fis4 | g2 a4 b2 g4 | a1. | c1.
-                    d2. d2. | c2 a4 b2 a4 | g1.~\> | g1. r2. \!
-                    
-
-
+                    \ff g2.~ g2 fis4 | g2 a4 bes2 g4 | a1. | c1.
+                    d2. d2. | c2 a4 bes2 a4 | g1.~\> | g2. r2. \!
+                    c2. c2. | d2 c4 c2 a4 | f1. | d1.
+                    c2. f2. | a2 g4 f2 e4 | f1.~\> | f2.\! r2. \p
                 }
             }
             \new Lyrics \lyricsto "tenor" {
                 \firstVerse
             }
+            
+            \new PianoStaff <<
+               \new Staff = "treble" {
+                    \clef "treble"
+                    \key f \major
+                    \tempo 4 = 140
+                    \time 6/4
+                    \relative {
+                        % The flame licking the sky
+                        d''8 c8 f,8 a8 f8 a8 d8 c8 f,8 a8 f8 a8 |
+                        d8 c8 f,8 a8 f8 a8 d8 c8 f,8 a8 f8 a8 
+                        d8 c8 f,8 bes8 f8 bes8 d8 c8 f,8 bes8 f8 bes8 
+                        d8 c8 f,8 bes8 f8 bes8 d8 c8 f,8 bes8 f8 bes8 
+                        d8 c8 f,8 a8 f8 a8 d8 c8 f,8 a8 f8 a8 
+                        d8 c8 f,8 a8 f8 a8 d8 c8 f,8 a8 f8 a8 
+                        d8 c8 f,8 bes8 f8 bes8 d8 c8 f,8 bes8 f8 bes8 
+                        d8 c8 f,8 bes8 f8 bes8 d8 c8 f,8 bes8 f8 bes8 
+                        d8 c8 f,8 a8 f8 a8 d8 c8 f,8 a8 f8 a8 
+                        d8 c8 f,8 a8 f8 a8 d8 c8 f,8 a8 f8 a8 
+                        d8 c8 f,8 bes8 f8 bes8 d8 c8 f,8 bes8 f8 bes8 
+                        d8 c8 f,8 bes8 f8 bes8 d8 c8 f,8 bes8 f8 bes8 
+                    }
+                        
+
+               }
+               \new Staff = "bass" {
+                    \clef "bass"
+                    \key f \major
+                    \tempo 4 = 140
+                    \time 6/4
+                    \relative {
+                        <f c>2( d4 <f c>2) r4  |
+                        <f c>2( d4 <f c>2) r4  |
+                        <f bes>2( bes4 <f' c>2) r4  |
+                        <f, bes>2( bes4 <f' c>2) r4  |
+
+                    }
+
+               }
+            >>
             %{
             \new Voice = "countertenor" {
 
@@ -97,16 +144,6 @@ fourthVerse = \lyricmode {
             \new Voice = "bass" {
 
             }
-            
-            \new PianoStaff <<
-               \new Staff = "treble" {
-                    
-
-               }
-               \new Staff = "bass" {
-
-               }
-            >>
             %}
         >>
         #(if (ly:get-option 'enable-midi)
